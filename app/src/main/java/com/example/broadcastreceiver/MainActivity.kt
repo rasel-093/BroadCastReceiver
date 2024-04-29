@@ -21,6 +21,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.example.broadcastreceiver.ui.theme.BroadCastReceiverTheme
@@ -43,7 +44,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                  //  println(initialStatus)
+                    //println(isAirplaneModeOn(LocalContext.current))
+                    isAirplaneModeOn = isAirplaneModeOn(LocalContext.current)
                     AirplaneModeStatus(isAirplaneModeOn)
                 }
             }
